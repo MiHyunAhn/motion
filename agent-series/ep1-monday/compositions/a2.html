@@ -1,0 +1,43 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #141413; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #root .note { position: absolute; left: 96px; top: 1270px; margin: 0; font-size: 32px; font-weight: 500; color: #8A8780; letter-spacing: -0.01em; }
+    #a2-a { top: 360px; font-size: 100px; font-weight: 900; color: #141413; }
+    #a2-win { position: absolute; left: 96px; top: 470px; width: 860px; height: 300px; overflow: hidden; }
+    #a2-strip { position: absolute; left: 0; top: 0; }
+    #a2-strip p { margin: 0; height: 300px; line-height: 300px; font-size: 280px; font-weight: 900; color: #141413; letter-spacing: -0.04em; white-space: nowrap; }
+    #a2-b { top: 830px; font-size: 100px; font-weight: 900; color: #141413; }
+  </style>
+  <div id="root" data-composition-id="a2" data-width="1080" data-height="1920">
+    <div class="bg" id="a2-bg" style="background:#F0EEE6"></div>
+    <p class="ln" id="a2-a"><span class="w">같은</span> <span class="w">월요일,</span></p>
+    <div id="a2-win" data-layout-allow-overflow>
+      <div id="a2-strip">
+        <p data-layout-allow-occlusion>19:00</p>
+        <p data-layout-allow-occlusion>15:00</p>
+        <p data-layout-allow-occlusion>11:30</p>
+        <p data-layout-allow-occlusion>09:00</p>
+      </div>
+    </div>
+    <p class="ln" id="a2-b"><span class="hl" id="a2-hl">에이전트가</span> 있었다면</p>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#a2-bg", { clipPath: "circle(0% at 400px 520px)" }, { clipPath: "circle(150% at 400px 520px)", duration: 0.45, ease: "power3.in" }, 0);
+    tl.fromTo("#a2-a .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 0.4);
+    tl.fromTo("#a2-win", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 0.5);
+    tl.fromTo("#a2-strip", { y: 0 }, { y: -300, duration: 0.12, ease: "power2.inOut" }, 0.9);
+    tl.to("#a2-strip", { y: -600, duration: 0.12, ease: "power2.inOut" }, 1.05);
+    tl.to("#a2-strip", { y: -900, duration: 0.28, ease: "back.out(1.4)" }, 1.2);
+    tl.fromTo("#a2-b", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 1.7);
+    tl.fromTo("#a2-hl", { backgroundSize: "0% 42%" }, { backgroundSize: "100% 42%", duration: 0.45, ease: "power3.out" }, 2);
+    window.__timelines["a2"] = tl;
+  </script>
+</template>

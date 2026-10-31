@@ -1,0 +1,47 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #D97757; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #root .note { position: absolute; left: 96px; top: 1270px; margin: 0; font-size: 32px; font-weight: 500; color: #8A8780; letter-spacing: -0.01em; }
+    #c7-s { top: 290px; font-size: 48px; font-weight: 700; color: #8A8780; }
+    #c7-a { top: 370px; font-size: 64px; font-weight: 700; color: #141413; }
+    #c7-b { top: 450px; font-size: 220px; font-weight: 900; color: #141413; letter-spacing: -0.04em; }
+    #c7-c { top: 700px; font-size: 130px; font-weight: 900; color: #141413; }
+    #c7-rule { position: absolute; left: 96px; top: 910px; width: 840px; height: 8px; background: #D97757; transform-origin: 0% 50%; }
+    #c7-d { top: 950px; font-size: 56px; font-weight: 900; color: #141413; }
+    #c7-e { top: 1030px; font-size: 48px; font-weight: 500; color: #141413; }
+    #c7-btn { position: absolute; left: 96px; top: 1140px; width: 840px; height: 140px; background: #141413; }
+    #c7-btn p { margin: 0; line-height: 140px; padding-left: 44px; font-size: 60px; font-weight: 900; color: #F0EEE6; letter-spacing: -0.02em; white-space: nowrap; }
+    #c7-btn b { color: #D97757; }
+  </style>
+  <div id="root" data-composition-id="c7" data-width="1080" data-height="1920">
+    <div class="bg" id="c7-bg" style="background:#F0EEE6"></div>
+    <p class="ln" id="c7-s">에이전트 경영 시리즈 · 완결</p>
+    <p class="ln" id="c7-a">C-Level을 위한</p>
+    <p class="ln" id="c7-b"><span class="l">C</span><span class="l">l</span><span class="l">a</span><span class="l">u</span><span class="l">d</span><span class="l">e</span></p>
+    <p class="ln" id="c7-c"><span class="w">에이전트</span> <span class="w">경영</span></p>
+    <div id="c7-rule"></div>
+    <p class="ln" id="c7-d">IGM세계경영연구원</p>
+    <p class="ln" id="c7-e"><span class="w">4기</span> <span class="w">11.23</span> <span class="w">개강</span> <span class="w">·</span> <span class="w">2일</span> <span class="w">과정</span> <span class="w">·</span> <span class="w">서울</span></p>
+    <div id="c7-btn"><p>igm.or.kr 에서 신청 <b>→</b></p></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#c7-bg", { clipPath: "circle(0% at 540px 960px)" }, { clipPath: "circle(150% at 540px 960px)", duration: 0.45, ease: "power3.in" }, 0);
+    tl.fromTo("#c7-s", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 0.4);
+    tl.fromTo("#c7-a", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 0.5);
+    tl.fromTo("#c7-b .l", { opacity: 0, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.22, stagger: 0.07, ease: "power4.out" }, 0.65);
+    tl.fromTo("#c7-c .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.1, ease: "power4.out" }, 1.2);
+    tl.fromTo("#c7-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "expo.out" }, 1.7);
+    tl.fromTo("#c7-d", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 1.9);
+    tl.fromTo("#c7-e .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.06, ease: "power4.out" }, 2.1);
+    tl.fromTo("#c7-btn", { opacity: 0, scaleX: 0.3 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "expo.out", transformOrigin: "0% 50%" }, 2.5);
+    window.__timelines["c7"] = tl;
+  </script>
+</template>

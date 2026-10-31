@@ -1,0 +1,48 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #F0EEE6; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #root .note { position: absolute; left: 96px; top: 1270px; margin: 0; font-size: 32px; font-weight: 500; color: #8A8780; letter-spacing: -0.01em; }
+    #c3-a { top: 300px; font-size: 90px; font-weight: 900; color: #141413; }
+    #c3-card { position: absolute; left: 96px; top: 450px; width: 840px; height: 300px; background: #F0EEE6; }
+    #root .cin { position: absolute; left: 44px; top: 36px; margin: 0; white-space: nowrap; letter-spacing: -0.02em; }
+    #root .cin p { margin: 0; }
+    #c3-note .t { font-size: 52px; font-weight: 900; color: #141413; }
+    #c3-note .s { font-size: 40px; font-weight: 500; color: #141413; margin-top: 18px; line-height: 1.45; }
+    #c3-skill .t { font-size: 76px; font-weight: 900; color: #D97757; }
+    #c3-skill .s { font-size: 40px; font-weight: 500; color: #F0EEE6; margin-top: 26px; line-height: 1.45; }
+    #c3-b { top: 800px; font-size: 130px; font-weight: 900; color: #141413; }
+    #c3-c { top: 990px; font-size: 60px; font-weight: 500; color: #141413; }
+  </style>
+  <div id="root" data-composition-id="c3" data-width="1080" data-height="1920">
+    <div class="bg" id="c3-bg" style="background:#D97757"></div>
+    <p class="ln" id="c3-a"><span class="w">그</span> <span class="w">노하우를</span></p>
+    <div id="c3-card">
+      <div class="cin" id="c3-note"><p class="t">김 부장 업무 노트</p><p class="s">거래처별 보고 순서<br />숫자 검증하는 법</p></div>
+      <div class="cin" id="c3-skill"><p class="t">영업보고.skill</p><p class="s">보고 순서 · 숫자 검증 · 보고서 톤</p></div>
+    </div>
+    <p class="ln" id="c3-b">스킬로 남긴다면</p>
+    <p class="ln" id="c3-c"><span class="w">Claude가</span> <span class="w">김</span> <span class="w">부장처럼</span> <span class="w">일한다</span></p>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#c3-bg", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.35, ease: "power2.inOut" }, 0);
+    tl.fromTo("#c3-a .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 0.3);
+    tl.fromTo("#c3-card", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 0.8);
+    tl.fromTo("#c3-skill", { opacity: 0, filter: "blur(12px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power3.out" }, 2.75);
+    tl.to("#c3-note", { opacity: 0, filter: "blur(12px)", duration: 0.15, ease: "power3.in" }, 2.6);
+    tl.to("#c3-card", { backgroundColor: "#141413", duration: 0.3, ease: "power2.inOut" }, 2.6);
+    tl.fromTo("#c3-card", { scaleX: 1 }, { scaleX: 1.04, duration: 0.15, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "0% 50%" }, 2.6);
+    tl.fromTo("#c3-b", { opacity: 0, scale: 1.25, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out", transformOrigin: "0% 50%" }, 3.6);
+    tl.fromTo("#c3-c .w", { opacity: 0, color: "#F0EEE6" }, { opacity: 1, duration: 0.12, stagger: 0.09, ease: "none" }, 4.8);
+    tl.to("#c3-c .w", { color: "#141413", duration: 0.25, stagger: 0.09, ease: "power2.out" }, 4.8 + 0.12);
+    tl.to("#c3-a, #c3-b, #c3-c", { opacity: 0, filter: "blur(10px)", duration: 0.2, ease: "power3.in" }, 8.2);
+    window.__timelines["c3"] = tl;
+  </script>
+</template>

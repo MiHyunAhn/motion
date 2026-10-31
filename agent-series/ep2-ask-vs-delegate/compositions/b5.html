@@ -1,0 +1,42 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #141413; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #root .note { position: absolute; left: 96px; top: 1270px; margin: 0; font-size: 32px; font-weight: 500; color: #8A8780; letter-spacing: -0.01em; }
+    #b5-a { top: 360px; font-size: 56px; font-weight: 700; color: #141413; }
+    #b5-b { top: 440px; font-size: 230px; font-weight: 900; color: #141413; letter-spacing: -0.04em; }
+    #b5-c { top: 700px; font-size: 100px; font-weight: 900; color: #141413; }
+    #b5-rule { position: absolute; left: 96px; top: 880px; width: 840px; height: 8px; background: #D97757; transform-origin: 0% 50%; }
+    #b5-d { top: 930px; font-size: 48px; font-weight: 700; color: #8A8780; }
+    #b5-e { top: 1000px; font-size: 80px; font-weight: 900; color: #141413; }
+    #b5-f { top: 1190px; font-size: 38px; font-weight: 500; color: #141413; }
+  </style>
+  <div id="root" data-composition-id="b5" data-width="1080" data-height="1920">
+    <div class="bg" id="b5-bg" style="background:#F0EEE6"></div>
+    <p class="ln" id="b5-a">에이전트 경영 시리즈</p>
+    <p class="ln" id="b5-b"><span class="l">E</span><span class="l">P</span><span class="l">.</span><span class="l">2</span></p>
+    <p class="ln" id="b5-c"><span class="w">묻는</span> <span class="w">AI,</span> <span class="w">맡기는</span> <span class="w">AI</span></p>
+    <div id="b5-rule"></div>
+    <p class="ln" id="b5-d">다음 편 →</p>
+    <p class="ln" id="b5-e"><span class="w">김</span> <span class="w">부장이</span> <span class="w">떠나던</span> <span class="w">날</span></p>
+    <p class="ln" id="b5-f">IGM 「C-Level을 위한 Claude 에이전트 경영」</p>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#b5-bg", { clipPath: "circle(0% at 540px 960px)" }, { clipPath: "circle(150% at 540px 960px)", duration: 0.45, ease: "power3.in" }, 0);
+    tl.fromTo("#b5-a", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 0.45);
+    tl.fromTo("#b5-b .l", { opacity: 0, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.22, stagger: 0.07, ease: "power4.out" }, 0.6);
+    tl.fromTo("#b5-c .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.1, ease: "power4.out" }, 1.1);
+    tl.fromTo("#b5-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "expo.out" }, 1.7);
+    tl.fromTo("#b5-d", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 2);
+    tl.fromTo("#b5-e .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.1, ease: "power4.out" }, 2.2);
+    tl.fromTo("#b5-f", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 2.7);
+    window.__timelines["b5"] = tl;
+  </script>
+</template>

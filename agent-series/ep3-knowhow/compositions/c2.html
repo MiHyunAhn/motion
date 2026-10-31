@@ -1,0 +1,35 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #141413; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #root .note { position: absolute; left: 96px; top: 1270px; margin: 0; font-size: 32px; font-weight: 500; color: #8A8780; letter-spacing: -0.01em; }
+    #c2-a { top: 380px; font-size: 80px; font-weight: 700; color: #141413; }
+    #c2-b { top: 480px; font-size: 90px; font-weight: 900; color: #141413; }
+    #c2-c { top: 600px; font-size: 320px; font-weight: 900; color: #141413; }
+    #c2-d { top: 990px; font-size: 64px; font-weight: 500; color: #141413; }
+  </style>
+  <div id="root" data-composition-id="c2" data-width="1080" data-height="1920">
+    <div class="bg" id="c2-bg" style="background:#F0EEE6"></div>
+    <p class="ln" id="c2-a"><span class="w">몇</span> <span class="w">달</span> <span class="w">뒤,</span></p>
+    <p class="ln" id="c2-b"><span class="w">그</span> <span class="w">일을</span> <span class="w">아는</span> <span class="w">사람이</span></p>
+    <p class="ln" id="c2-c">없다</p>
+    <p class="ln" id="c2-d"><span class="w">처음부터</span> <span class="w">다시</span></p>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#c2-bg", { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.35, ease: "power2.inOut" }, 0);
+    tl.fromTo("#c2-a .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 0.3);
+    tl.fromTo("#c2-b .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 0.7);
+    tl.fromTo("#c2-c", { opacity: 0, scale: 1.25, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out", transformOrigin: "0% 50%" }, 1.4);
+    tl.fromTo("#c2-d .w", { opacity: 0, color: "#F0EEE6" }, { opacity: 1, duration: 0.12, stagger: 0.09, ease: "none" }, 2.8);
+    tl.to("#c2-d .w", { color: "#8A8780", duration: 0.25, stagger: 0.09, ease: "power2.out" }, 2.8 + 0.12);
+    tl.to("#c2-a, #c2-b, #c2-c, #c2-d", { opacity: 0, filter: "blur(10px)", duration: 0.2, ease: "power3.in" }, 5.25);
+    window.__timelines["c2"] = tl;
+  </script>
+</template>

@@ -1,0 +1,30 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #F0EEE6; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #root .note { position: absolute; left: 96px; top: 1270px; margin: 0; font-size: 32px; font-weight: 500; color: #8A8780; letter-spacing: -0.01em; }
+    #b1-a { top: 340px; font-size: 80px; font-weight: 700; color: #141413; }
+    #b1-b { top: 430px; font-size: 200px; font-weight: 900; color: #141413; }
+    #b1-c { top: 650px; font-size: 200px; font-weight: 900; color: #141413; }
+    #b1-d { top: 920px; font-size: 64px; font-weight: 500; color: #141413; }
+  </style>
+  <div id="root" data-composition-id="b1" data-width="1080" data-height="1920">
+    <p class="ln" id="b1-a">같은 지시,</p>
+    <p class="ln" id="b1-b">“경쟁사</p>
+    <p class="ln" id="b1-c">분석해줘”</p>
+    <p class="ln" id="b1-d"><span class="w">두</span> <span class="w">AI에게</span> <span class="w">맡겨</span> <span class="w">봤다</span></p>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#b1-d .w", { opacity: 0, color: "#8A8780" }, { opacity: 1, duration: 0.12, stagger: 0.09, ease: "none" }, 1.6);
+    tl.to("#b1-d .w", { color: "#141413", duration: 0.25, stagger: 0.09, ease: "power2.out" }, 1.6 + 0.12);
+    tl.to("#b1-a, #b1-b, #b1-c, #b1-d", { opacity: 0, filter: "blur(10px)", duration: 0.2, ease: "power3.in" }, 4.25);
+    window.__timelines["b1"] = tl;
+  </script>
+</template>
