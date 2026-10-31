@@ -1,0 +1,46 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #F0EEE6; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #s10-a { top: 300px; font-size: 90px; font-weight: 700; color: #141413; }
+    #s10-b { top: 400px; font-size: 130px; font-weight: 900; color: #141413; }
+    #s10-stack { position: absolute; left: 96px; top: 640px; width: 840px; }
+    #s10-stack div { height: 108px; margin-bottom: 14px; background: #141413; color: #F0EEE6; font-size: 60px; font-weight: 900; line-height: 108px; padding-left: 40px; letter-spacing: -0.02em; white-space: nowrap; }
+    #s10-stack span { color: #D97757; margin-right: 22px; }
+    #s10-c { top: 1060px; font-size: 120px; font-weight: 900; color: #141413; }
+    #s10-d { top: 1210px; font-size: 48px; font-weight: 500; color: #141413; }
+  </style>
+  <div data-hf-id="hf-k4dx" id="root" data-composition-id="s10" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-uf7r" class="bg" id="s10-bg" style="background:#D97757"></div>
+    <div data-hf-id="hf-hp6a" id="s10-stage">
+      <p data-hf-id="hf-uw2j" class="ln" id="s10-a"><span data-hf-id="hf-g87s" class="w">회사의</span></p>
+      <p data-hf-id="hf-m86o" class="ln" id="s10-b"><span data-hf-id="hf-gie8" class="w">두뇌를</span> <span data-hf-id="hf-g3y9" class="w">짓는다</span></p>
+      <div data-hf-id="hf-xmi0" id="s10-stack">
+        <div data-hf-id="hf-46th" id="s10-p1"><span data-hf-id="hf-lyqb">■</span>스킬 라이브러리</div>
+        <div data-hf-id="hf-x9ee" id="s10-p2"><span data-hf-id="hf-p3lf">■</span>MCP 허브</div>
+        <div data-hf-id="hf-ruqq" id="s10-p3"><span data-hf-id="hf-opae">■</span>LLM Wiki</div>
+      </div>
+      <p data-hf-id="hf-ixvd" class="ln" id="s10-c"><span data-hf-id="hf-1qu5" class="l">컴</span><span data-hf-id="hf-zith" class="l">퍼</span><span data-hf-id="hf-vnwp" class="l">니</span><span data-hf-id="hf-e457" class="l">&nbsp;</span><span data-hf-id="hf-anv9" class="l">브</span><span data-hf-id="hf-7tvt" class="l">레</span><span data-hf-id="hf-9c55" class="l">인</span></p>
+      <p data-hf-id="hf-a9zi" class="ln" id="s10-d"><span data-hf-id="hf-kpiw" class="w">노하우가</span> <span data-hf-id="hf-0ovk" class="w">회사의</span> <span data-hf-id="hf-lo3o" class="w">자산이</span> <span data-hf-id="hf-xc60" class="w">된다</span></p>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s10-bg", { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.4, ease: "power2.inOut" }, 0);
+    tl.fromTo("#s10-a .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 0.35);
+    tl.fromTo("#s10-b .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.1, ease: "power4.out" }, 0.6);
+    tl.fromTo("#s10-p1", { opacity: 0, y: -70 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 1.5);
+    tl.fromTo("#s10-p2", { opacity: 0, y: -70 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 1.85);
+    tl.fromTo("#s10-p3", { opacity: 0, y: -70 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, 2.2);
+    tl.fromTo("#s10-c .l", { opacity: 0.0, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.22, stagger: 0.07, ease: "power4.out" }, 3);
+    tl.fromTo("#s10-d", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 3.9);
+    tl.to("#s10-stage", { opacity: 0, filter: "blur(12px)", duration: 0.25, ease: "power3.in" }, 5.72);
+    window.__timelines["s10"] = tl;
+  </script>
+</template>

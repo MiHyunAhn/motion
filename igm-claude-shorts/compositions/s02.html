@@ -1,0 +1,36 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #F0EEE6; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #s02-a, #s02-c { top: 540px; font-size: 96px; font-weight: 700; color: #F0EEE6; }
+    #s02-b { top: 670px; font-size: 220px; font-weight: 900; color: #F0EEE6; }
+    #s02-d { top: 670px; font-size: 190px; font-weight: 900; color: #D97757; }
+    #s02-e { top: 930px; font-size: 60px; font-weight: 500; color: #F0EEE6; opacity: 0.8; }
+  </style>
+  <div data-hf-id="hf-53e6" id="root" data-composition-id="s02" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-xbyp" class="bg" id="s02-bg" style="background:#141413"></div>
+    <p data-hf-id="hf-rwmy" class="ln" id="s02-a"><span data-hf-id="hf-dp7g" class="w">질문하는</span> <span data-hf-id="hf-yy2u" class="w">AI는</span></p>
+    <p data-hf-id="hf-has6" class="ln" id="s02-b">끝났다.</p>
+    <p data-hf-id="hf-kz9c" class="ln" id="s02-c"><span data-hf-id="hf-ikfo" class="w">이제는</span></p>
+    <p data-hf-id="hf-h15b" class="ln" id="s02-d"><span data-hf-id="hf-s06l" class="l">위</span><span data-hf-id="hf-d4z1" class="l">임</span><span data-hf-id="hf-4kgt" class="l">이</span><span data-hf-id="hf-3m19" class="l">다</span><span data-hf-id="hf-4jin" class="l">.</span></p>
+    <p data-hf-id="hf-d31a" class="ln" id="s02-e"><span data-hf-id="hf-l4my" class="w">AI에게</span> <span data-hf-id="hf-5yag" class="w">일을</span> <span data-hf-id="hf-nxof" class="w">맡기는</span> <span data-hf-id="hf-od14" class="w">리더</span></p>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s02-bg", { clipPath: "inset(100% 0% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.35, ease: "power2.inOut" }, 0);
+    tl.fromTo("#s02-a .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 0.35);
+    tl.fromTo("#s02-b", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 0.7);
+    tl.to("#s02-a .w, #s02-b", { opacity: 0, filter: "blur(8px)", duration: 0.16, stagger: 0.03, ease: "power3.in" }, 1.75);
+    tl.fromTo("#s02-c .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 1.95);
+    tl.fromTo("#s02-d .l", { opacity: 0.0, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.22, stagger: 0.07, ease: "power4.out" }, 2.1);
+    tl.fromTo("#s02-e .w", { opacity: 0, color: "#8A8780" }, { opacity: 1, duration: 0.12, stagger: 0.09, ease: "none" }, 2.6);
+    tl.to("#s02-e .w", { color: "#F0EEE6", duration: 0.25, stagger: 0.09, ease: "power2.out" }, 2.6 + 0.12);
+    window.__timelines["s02"] = tl;
+  </script>
+</template>

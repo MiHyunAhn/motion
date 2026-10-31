@@ -1,0 +1,37 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #D97757; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #s04-a { top: 330px; font-size: 90px; font-weight: 700; color: #141413; }
+    #s04-b { top: 420px; font-size: 380px; font-weight: 900; color: #141413; letter-spacing: -0.05em; }
+    #s04-b small { font-size: 140px; letter-spacing: -0.03em; margin-left: 12px; }
+    #s04-c { top: 880px; font-size: 84px; font-weight: 700; color: #141413; }
+    #s04-d { top: 990px; font-size: 84px; font-weight: 900; color: #141413; }
+  </style>
+  <div data-hf-id="hf-8xwg" id="root" data-composition-id="s04" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-ai8y" class="bg" id="s04-bg" style="background:#F0EEE6"></div>
+    <p data-hf-id="hf-i51k" class="ln" id="s04-a"><span data-hf-id="hf-jn5c" class="w">단</span> <span data-hf-id="hf-m2gu" class="w">2일,</span></p>
+    <p data-hf-id="hf-qsxf" class="ln" id="s04-b"><span data-hf-id="hf-36eu" class="w" id="s04-num">0</span><small data-hf-id="hf-b8n3" class="w" id="s04-unit">시간</small></p>
+    <p data-hf-id="hf-mute" class="ln" id="s04-c"><span data-hf-id="hf-jfm3" class="w">노트북</span> <span data-hf-id="hf-g0z0" class="w">한</span> <span data-hf-id="hf-fllo" class="w">대로</span></p>
+    <p data-hf-id="hf-433p" class="ln" id="s04-d"><span data-hf-id="hf-1v3f" class="hl" id="s04-hl">대표님이 직접 만든다</span></p>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s04-bg", { clipPath: "inset(0% 0% 0% 100%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.3, ease: "power2.inOut" }, 0);
+    tl.fromTo("#s04-a .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 0.3);
+    tl.fromTo("#s04-b", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 0.5);
+    const n = { v: 0 }, el = document.querySelector("#s04-num");
+    tl.fromTo(n, { v: 0 }, { v: 15, duration: 1.4, ease: "power2.out", onUpdate: () => { el.textContent = Math.round(n.v); } }, 0.5);
+    tl.fromTo("#s04-c .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 2.05);
+    tl.fromTo("#s04-d", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 2.5);
+    tl.fromTo("#s04-hl", { backgroundSize: "0% 42%" }, { backgroundSize: "100% 42%", duration: 0.45, ease: "power3.out" }, 2.65);
+    tl.to("#s04-a .w, #s04-b, #s04-c .w, #s04-d", { opacity: 0, filter: "blur(8px)", duration: 0.16, stagger: 0.03, ease: "power3.in" }, 4.1);
+    window.__timelines["s04"] = tl;
+  </script>
+</template>

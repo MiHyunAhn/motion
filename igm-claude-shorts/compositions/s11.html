@@ -1,0 +1,37 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #D97757; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #s11-a { top: 480px; font-size: 100px; font-weight: 900; color: #8A8780; }
+    #s11-b { top: 600px; font-size: 100px; font-weight: 900; color: #8A8780; }
+    #s11-c { top: 480px; font-size: 130px; font-weight: 900; color: #F0EEE6; }
+    #s11-d { top: 640px; font-size: 150px; font-weight: 900; color: #D97757; }
+    #s11-e { top: 880px; font-size: 56px; font-weight: 500; color: #F0EEE6; }
+  </style>
+  <div data-hf-id="hf-mdki" id="root" data-composition-id="s11" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-4qcd" class="bg" id="s11-bg" style="background:#141413"></div>
+    <p data-hf-id="hf-ixvy" class="ln" id="s11-a"><span data-hf-id="hf-us4f" class="w">구경하는</span> <span data-hf-id="hf-1vkh" class="w">수업이</span></p>
+    <p data-hf-id="hf-cs65" class="ln" id="s11-b"><span data-hf-id="hf-6epr" class="w">아닙니다.</span></p>
+    <p data-hf-id="hf-c0ic" class="ln" id="s11-c"><span data-hf-id="hf-f36s" class="w">내</span> <span data-hf-id="hf-1ndo" class="w">에이전트를</span></p>
+    <p data-hf-id="hf-zhzv" class="ln" id="s11-d"><span data-hf-id="hf-lqzg" class="w">들고</span> <span data-hf-id="hf-hdij" class="w">갑니다.</span></p>
+    <p data-hf-id="hf-vjvu" class="ln" id="s11-e"><span data-hf-id="hf-pfv3" class="w">현업에서</span> <span data-hf-id="hf-4j0o" class="w">바로</span> <span data-hf-id="hf-7okk" class="w">쓰는</span> <span data-hf-id="hf-hlbq" class="w">AI</span> <span data-hf-id="hf-ff2g" class="w">에이전트</span></p>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s11-bg", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.inOut" }, 0);
+    tl.fromTo("#s11-a .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 0.3);
+    tl.fromTo("#s11-b .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 0.55);
+    tl.to("#s11-a .w, #s11-b .w", { opacity: 0, filter: "blur(8px)", duration: 0.16, stagger: 0.03, ease: "power3.in" }, 1.9);
+    tl.fromTo("#s11-c .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.1, ease: "power4.out" }, 2.15);
+    tl.fromTo("#s11-d", { opacity: 0, scale: 1.25, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out", transformOrigin: "0% 50%" }, 2.6);
+    tl.fromTo("#s11-e .w", { opacity: 0, color: "#8A8780" }, { opacity: 1, duration: 0.12, stagger: 0.09, ease: "none" }, 3.3);
+    tl.to("#s11-e .w", { color: "#F0EEE6", duration: 0.25, stagger: 0.09, ease: "power2.out" }, 3.3 + 0.12);
+    window.__timelines["s11"] = tl;
+  </script>
+</template>

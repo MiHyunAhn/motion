@@ -1,0 +1,40 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #141413; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #s05-a { top: 300px; font-size: 64px; font-weight: 900; color: #D97757; letter-spacing: 0.02em; }
+    #s05-b { top: 400px; font-size: 230px; font-weight: 900; color: #F0EEE6; }
+    #s05-c { top: 640px; font-size: 230px; font-weight: 900; color: #F0EEE6; }
+    #s05-term { position: absolute; left: 96px; top: 940px; width: 840px; padding: 26px 32px; background: #24231F; border-left: 10px solid #D97757; }
+    #s05-type { font-family: "Pretendard", sans-serif; font-size: 48px; letter-spacing: -0.02em; font-weight: 700; color: #F0EEE6; white-space: nowrap; margin: 0; }
+    #s05-type b { color: #D97757; }
+    #s05-d { top: 1130px; font-size: 64px; font-weight: 700; color: #F0EEE6; }
+  </style>
+  <div data-hf-id="hf-58hn" id="root" data-composition-id="s05" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-6vkk" id="s05-stage">
+      <p data-hf-id="hf-p5s2" class="ln" id="s05-a">DAY 1</p>
+      <p data-hf-id="hf-853i" class="ln" id="s05-b">바이브</p>
+      <p data-hf-id="hf-nd0g" class="ln" id="s05-c">코딩</p>
+      <div data-hf-id="hf-lt2g" id="s05-term"><p data-hf-id="hf-a1wb" id="s05-type"><b data-hf-id="hf-qcht">&gt;</b> 우리 회사 업무 자동화해줘</p></div>
+      <p data-hf-id="hf-b8m0" class="ln" id="s05-d"><span data-hf-id="hf-9pum" class="w">→</span> <span data-hf-id="hf-rvyd" class="w">GitHub에</span> <span data-hf-id="hf-a4z0" class="w">올리기까지</span></p>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s05-a", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 0.1);
+    tl.fromTo("#s05-b", { opacity: 0, scale: 1.25, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out", transformOrigin: "0% 50%" }, 0.3);
+    tl.fromTo("#s05-c", { opacity: 0, scale: 1.25, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out", transformOrigin: "0% 50%" }, 0.55);
+    tl.fromTo("#s05-term", { opacity: 0, scaleX: 0.2, filter: "blur(12px)" }, { opacity: 1, scaleX: 1, filter: "blur(0px)", duration: 0.25, ease: "power3.out", transformOrigin: "0% 50%" }, 1.4);
+    tl.fromTo("#s05-type", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 1.2, ease: "steps(15)" }, 1.7);
+    tl.fromTo("#s05-d .w", { opacity: 0, color: "#8A8780" }, { opacity: 1, duration: 0.12, stagger: 0.09, ease: "none" }, 3.2);
+    tl.to("#s05-d .w", { color: "#F0EEE6", duration: 0.25, stagger: 0.09, ease: "power2.out" }, 3.2 + 0.12);
+    tl.to("#s05-stage", { scale: 1.35, opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power3.in", transformOrigin: "30% 50%" }, 4.68);
+    window.__timelines["s05"] = tl;
+  </script>
+</template>

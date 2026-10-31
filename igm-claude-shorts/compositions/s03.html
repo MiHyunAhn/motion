@@ -1,0 +1,32 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #141413; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #s03-a { top: 430px; font-size: 72px; font-weight: 700; color: #141413; }
+    #s03-b { top: 520px; font-size: 230px; font-weight: 900; color: #141413; letter-spacing: -0.04em; }
+    #s03-c { top: 790px; font-size: 140px; font-weight: 900; color: #141413; }
+  </style>
+  <div data-hf-id="hf-gr41" id="root" data-composition-id="s03" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-ucoj" class="bg" id="s03-bg" style="background:#D97757"></div>
+    <div data-hf-id="hf-a2ua" id="s03-stage">
+      <p data-hf-id="hf-th47" class="ln" id="s03-a">C-Level을 위한</p>
+      <p data-hf-id="hf-690c" class="ln" id="s03-b"><span data-hf-id="hf-g2eg" class="l">C</span><span data-hf-id="hf-x8hh" class="l">l</span><span data-hf-id="hf-rzla" class="l">a</span><span data-hf-id="hf-0t8q" class="l">u</span><span data-hf-id="hf-q025" class="l">d</span><span data-hf-id="hf-qed6" class="l">e</span></p>
+      <p data-hf-id="hf-70o5" class="ln" id="s03-c"><span data-hf-id="hf-ff2g" class="w">에이전트</span> <span data-hf-id="hf-tw8q" class="w">경영</span></p>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s03-bg", { clipPath: "circle(0% at 330px 790px)" }, { clipPath: "circle(150% at 330px 790px)", duration: 0.45, ease: "power3.in" }, 0);
+    tl.fromTo("#s03-a", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 0.45);
+    tl.fromTo("#s03-b .l", { opacity: 0.0, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.22, stagger: 0.07, ease: "power4.out" }, 0.65);
+    tl.fromTo("#s03-c .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.1, ease: "power4.out" }, 1.35);
+    tl.to("#s03-stage", { x: -320, opacity: 0, filter: "blur(16px)", duration: 0.24, ease: "power3.in" }, 4.12);
+    window.__timelines["s03"] = tl;
+  </script>
+</template>

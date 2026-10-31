@@ -1,0 +1,44 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #F0EEE6; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #s07-a { top: 330px; font-size: 110px; font-weight: 900; color: #141413; }
+    #s07-b { top: 470px; font-size: 280px; font-weight: 900; color: #141413; letter-spacing: -0.02em; }
+    #s07-c { top: 790px; font-size: 110px; font-weight: 900; color: #141413; }
+    #s07-plate { position: absolute; left: 96px; top: 1010px; width: 840px; padding: 30px 36px; background: #141413; }
+    #s07-plate p { margin: 0; color: #F0EEE6; white-space: nowrap; letter-spacing: -0.02em; }
+    #s07-p1 { font-size: 64px; font-weight: 900; }
+    #s07-p1 b { color: #D97757; }
+    #s07-p2 { font-size: 44px; font-weight: 500; margin-top: 14px !important; opacity: 0.85; }
+  </style>
+  <div data-hf-id="hf-6n4t" id="root" data-composition-id="s07" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-ury7" class="bg" id="s07-bg" style="background:#D97757"></div>
+    <div data-hf-id="hf-ml0e" id="s07-stage">
+      <p data-hf-id="hf-3c7f" class="ln" id="s07-a"><span data-hf-id="hf-wjyn" class="w">반복</span> <span data-hf-id="hf-uhfj" class="w">업무,</span></p>
+      <p data-hf-id="hf-b2nx" class="ln" id="s07-b">SKILL</p>
+      <p data-hf-id="hf-vfzd" class="ln" id="s07-c"><span data-hf-id="hf-c0ws" class="w">하나로</span> <span data-hf-id="hf-tto3" class="w">끝낸다</span></p>
+      <div data-hf-id="hf-dvdk" id="s07-plate">
+        <p data-hf-id="hf-jyq2" id="s07-p1"><b data-hf-id="hf-vih6">+</b> 1주일 현업 과제</p>
+        <p data-hf-id="hf-fhd2" id="s07-p2">내 업무를 스킬로 만들어 GitHub 공유</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s07-bg", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.inOut" }, 0);
+    tl.fromTo("#s07-a .w", { opacity: 0, color: "#F0EEE6" }, { opacity: 1, duration: 0.12, stagger: 0.09, ease: "none" }, 0.3);
+    tl.to("#s07-a .w", { color: "#141413", duration: 0.25, stagger: 0.09, ease: "power2.out" }, 0.3 + 0.12);
+    tl.fromTo("#s07-b", { opacity: 0, scale: 1.25, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out", transformOrigin: "0% 50%" }, 0.8);
+    tl.fromTo("#s07-c .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 1.3);
+    tl.fromTo("#s07-plate", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "power4.out" }, 2.6);
+    tl.fromTo("#s07-p2", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 3);
+    tl.to("#s07-stage", { y: 300, opacity: 0, filter: "blur(14px)", duration: 0.24, ease: "power3.in" }, 4.72);
+    window.__timelines["s07"] = tl;
+  </script>
+</template>

@@ -1,0 +1,34 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #F0EEE6; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #s01-a { top: 360px; font-size: 72px; font-weight: 700; color: #141413; }
+    #s01-b { top: 470px; font-size: 120px; font-weight: 900; color: #141413; }
+    #s01-c { top: 620px; font-size: 260px; font-weight: 900; color: #141413; }
+    #s01-strike { position: absolute; left: 86px; top: 760px; width: 800px; height: 30px; background: #D97757; transform-origin: 0% 50%; }
+    #s01-d { top: 930px; font-size: 120px; font-weight: 900; color: #141413; }
+  </style>
+  <div data-hf-id="hf-4z0v" id="root" data-composition-id="s01" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-scyw" id="s01-stage">
+      <p data-hf-id="hf-s7qh" class="ln" id="s01-a">대표님,</p>
+      <p data-hf-id="hf-7fyb" class="ln" id="s01-b">아직도 AI에게</p>
+      <p data-hf-id="hf-k96t" class="ln" id="s01-c">질문만</p>
+      <div data-hf-id="hf-ldtw" id="s01-strike"></div>
+      <p data-hf-id="hf-ia9o" class="ln" id="s01-d"><span data-hf-id="hf-rktg" class="w">하십니까?</span></p>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s01-d .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 1);
+    tl.fromTo("#s01-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.35, ease: "expo.out" }, 2.0);
+    tl.to("#s01-c", { color: "#8A8780", duration: 0.3, ease: "power2.out" }, 2.25);
+    tl.to("#s01-stage", { y: -260, opacity: 0, filter: "blur(14px)", duration: 0.26, ease: "power3.in" }, 3.72);
+    window.__timelines["s01"] = tl;
+  </script>
+</template>

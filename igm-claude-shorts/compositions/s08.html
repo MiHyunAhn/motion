@@ -1,0 +1,37 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #141413; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #s08-a { top: 300px; font-size: 64px; font-weight: 900; color: #D97757; letter-spacing: 0.02em; }
+    #s08-b { top: 400px; font-size: 84px; font-weight: 700; color: #F0EEE6; }
+    #s08-c { top: 520px; font-size: 200px; font-weight: 900; color: #F0EEE6; }
+    #s08-d { top: 730px; font-size: 200px; font-weight: 900; color: #D97757; }
+    #s08-e { top: 1010px; font-size: 84px; font-weight: 700; color: #F0EEE6; }
+    #s08-f { top: 1110px; font-size: 84px; font-weight: 900; color: #D97757; }
+  </style>
+  <div data-hf-id="hf-me1o" id="root" data-composition-id="s08" data-width="1080" data-height="1920">
+    <p data-hf-id="hf-fxvk" class="ln" id="s08-a">DAY 2</p>
+    <p data-hf-id="hf-ja7r" class="ln" id="s08-b"><span data-hf-id="hf-hzzc" class="w">금융감독원</span> <span data-hf-id="hf-eg1s" class="w">데이터로</span></p>
+    <p data-hf-id="hf-fc3q" class="ln" id="s08-c"><span data-hf-id="hf-p7mi" class="l">종</span><span data-hf-id="hf-1nkm" class="l">목</span><span data-hf-id="hf-e457" class="l">&nbsp;</span><span data-hf-id="hf-z90t" class="l">분</span><span data-hf-id="hf-ximq" class="l">석</span></p>
+    <p data-hf-id="hf-q7ld" class="ln" id="s08-d"><span data-hf-id="hf-5jq5" class="l">보</span><span data-hf-id="hf-05q9" class="l">고</span><span data-hf-id="hf-x4bp" class="l">서</span></p>
+    <p data-hf-id="hf-pfxk" class="ln" id="s08-e"><span data-hf-id="hf-lud0" class="w">구글</span> <span data-hf-id="hf-85gg" class="w">시트로</span></p>
+    <p data-hf-id="hf-y3tf" class="ln" id="s08-f"><span data-hf-id="hf-oee8" class="w">대시보드까지</span></p>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s08-a", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 0);
+    tl.fromTo("#s08-b .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 0.25);
+    tl.fromTo("#s08-c .l", { opacity: 0.0, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.22, stagger: 0.07, ease: "power4.out" }, 0.75);
+    tl.fromTo("#s08-d .l", { opacity: 0.0, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.22, stagger: 0.07, ease: "power4.out" }, 1.25);
+    tl.fromTo("#s08-e .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 2.7);
+    tl.fromTo("#s08-f", { opacity: 0, scale: 1.25, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out", transformOrigin: "0% 50%" }, 3.1);
+    tl.to("#s08-a, #s08-b .w, #s08-c, #s08-d, #s08-e .w, #s08-f", { opacity: 0, filter: "blur(8px)", duration: 0.16, stagger: 0.03, ease: "power3.in" }, 5.05);
+    window.__timelines["s08"] = tl;
+  </script>
+</template>

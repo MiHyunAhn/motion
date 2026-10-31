@@ -1,0 +1,49 @@
+<template>
+  <style>
+    @font-face { font-family: "Pretendard"; font-weight: 900; src: url("assets/fonts/Pretendard-Black.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 700; src: url("assets/fonts/Pretendard-Bold.otf"); }
+    @font-face { font-family: "Pretendard"; font-weight: 500; src: url("assets/fonts/Pretendard-Medium.otf"); }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #141413; font-family: "Pretendard", sans-serif; }
+    #root .bg { position: absolute; inset: 0; }
+    #root .ln { position: absolute; left: 96px; margin: 0; line-height: 1.04; letter-spacing: -0.03em; white-space: nowrap; }
+    #root .w, #root .l { display: inline-block; }
+    #root .hl { background-image: linear-gradient(#D97757, #D97757); background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 42%; }
+    #s06-win { position: absolute; left: 96px; top: 360px; width: 860px; height: 240px; overflow: hidden; }
+    #s06-strip { position: absolute; left: 0; top: 0; }
+    #s06-strip p { margin: 0; height: 240px; line-height: 240px; font-size: 180px; font-weight: 900; color: #141413; letter-spacing: -0.03em; white-space: nowrap; }
+    #s06-strip p.last { color: #D97757; }
+    #s06-a { top: 630px; font-size: 110px; font-weight: 900; color: #141413; }
+    #s06-block { position: absolute; left: 96px; top: 830px; width: 700px; height: 330px; background: #D97757; transform-origin: 0% 50%; }
+    #s06-mcp { top: 850px; font-size: 280px; font-weight: 900; color: #141413; left: 136px; }
+    #s06-sub { top: 1190px; font-size: 52px; font-weight: 500; color: #141413; }
+  </style>
+  <div data-hf-id="hf-wofu" id="root" data-composition-id="s06" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-kt3c" class="bg" id="s06-bg" style="background:#F0EEE6"></div>
+    <div data-hf-id="hf-q9jk" id="s06-win" data-layout-allow-overflow>
+      <div data-hf-id="hf-fqq7" id="s06-strip">
+        <p data-hf-id="hf-uof1" data-layout-allow-occlusion>카카오톡</p>
+        <p data-hf-id="hf-9jvi" data-layout-allow-occlusion>데이터</p>
+        <p data-hf-id="hf-84mu" data-layout-allow-occlusion>금융 공시</p>
+        <p data-hf-id="hf-l8qg" class="last" data-layout-allow-occlusion>무엇이든</p>
+      </div>
+    </div>
+    <p data-hf-id="hf-gby6" class="ln" id="s06-a"><span data-hf-id="hf-sw7m" class="w">AI에</span> <span data-hf-id="hf-kgm0" class="w">연결한다</span></p>
+    <div data-hf-id="hf-eto2" id="s06-block"></div>
+    <p data-hf-id="hf-a2rp" class="ln" id="s06-mcp">MCP</p>
+    <p data-hf-id="hf-bng1" class="ln" id="s06-sub"><span data-hf-id="hf-f36s" class="w">내</span> <span data-hf-id="hf-va89" class="w">업무</span> <span data-hf-id="hf-mpek" class="w">도구를</span> <span data-hf-id="hf-47qi" class="w">AI의</span> <span data-hf-id="hf-x89c" class="w">손발로</span></p>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s06-bg", { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.35, ease: "power2.inOut" }, 0);
+    tl.fromTo("#s06-win", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out" }, 0.35);
+    tl.fromTo("#s06-strip", { y: 0 }, { y: -240, duration: 0.14, ease: "power2.inOut" }, 1.05);
+    tl.to("#s06-strip", { y: -480, duration: 0.14, ease: "power2.inOut" }, 1.55);
+    tl.to("#s06-strip", { y: -720, duration: 0.3, ease: "back.out(1.4)" }, 2.05);
+    tl.fromTo("#s06-a .w", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, stagger: 0.08, ease: "power4.out" }, 0.6);
+    tl.fromTo("#s06-block", { scaleX: 0 }, { scaleX: 1, duration: 0.35, ease: "expo.out" }, 2.7);
+    tl.fromTo("#s06-mcp", { opacity: 0, scale: 1.25, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out", transformOrigin: "0% 50%" }, 2.85);
+    tl.fromTo("#s06-sub .w", { opacity: 0, color: "#8A8780" }, { opacity: 1, duration: 0.12, stagger: 0.09, ease: "none" }, 3.15);
+    tl.to("#s06-sub .w", { color: "#141413", duration: 0.25, stagger: 0.09, ease: "power2.out" }, 3.15 + 0.12);
+    window.__timelines["s06"] = tl;
+  </script>
+</template>
